@@ -13,4 +13,11 @@ public class MovieService {
     @Autowired
     private MovieRepo movieRepo;
 
+    public List<Movie> getAll(){
+         return (List<Movie>) this.movieRepo.findAll();
+    }
+
+    public  List<Movie> postMovie(Movie movie){
+        return (List<Movie>) this.movieRepo.save(movie);
+    }
 }
