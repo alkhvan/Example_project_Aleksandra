@@ -4,6 +4,7 @@ import com.example.demo.model.Movie;
 import com.example.demo.repositories.MovieRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class MovieService {
          return (List<Movie>) this.movieRepo.findAll();
     }
 
-    public  List<Movie> postMovie(Movie movie){
-        return (List<Movie>) this.movieRepo.save(movie);
+    public  Movie postMovie( @RequestBody Movie movie){
+        return this.movieRepo.save(movie);
     }
 }

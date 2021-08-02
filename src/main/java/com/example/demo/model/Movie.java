@@ -1,8 +1,14 @@
 package com.example.demo.model;
 
-import java.util.Objects;
 
+import javax.persistence.*;
+import java.util.Objects;
+@Entity
+@Table(name = "movies")
 public class Movie {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID", updatable = false, nullable = false)
     private Long id;
     private String name;
     private String language;
